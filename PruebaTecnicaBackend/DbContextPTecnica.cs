@@ -17,54 +17,5 @@ namespace PruebaTecnicaBackend
 
 
 
-		public class Currencies
-		{
-
-			public int Id { get; set; }
-			public string Code { get; set; }
-			public string Name { get; set; }
-
-			public decimal RateToBase { get; set; }
-
-			public Currencies() { }
-		}
-
-
-		public class Users
-		{
-
-
-			public int Id { get; set; }
-			public string Name { get; set; }
-			public int Email { get; set; }
-
-			public int IsActive { get; set; }
-			public string Password { get; set; }
-
-			public List<Addresses> Posts { get; set; }
-
-			public Users() { }
-		}
-
-
-
-		public class Addresses
-		{
-
-			public int Id { get; set; }
-			public int UUserId { get; set; }
-			public Users User { get; set; }
-
-			public string Street { get; set; }
-
-			public int City { get; set; }
-
-			public int Country { get; set; }
-
-
-			public int ZipCode { get; set; }
-
-		}
-
 	}
 }
