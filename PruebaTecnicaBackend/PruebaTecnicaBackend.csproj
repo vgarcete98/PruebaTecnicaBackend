@@ -7,7 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="NewFolder\" />
+    <Folder Include="Application\Addresses\Commands\" />
+    <Folder Include="Application\Addresses\Queries\" />
+    <Folder Include="Application\CurrencyConversion\" />
+    <Folder Include="Application\Currencies\Commands\" />
+    <Folder Include="Application\Users\Commands\" />
+    <Folder Include="Application\Users\Queries\" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
   <ItemGroup>
