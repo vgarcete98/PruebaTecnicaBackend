@@ -11,8 +11,6 @@
     <Folder Include="Application\Addresses\Queries\" />
     <Folder Include="Application\Currencies\Commands\" />
     <Folder Include="Application\CurrencyConversion\" />
-    <Folder Include="Application\Users\Queries\GetUserById\" />
-    <Folder Include="Application\Users\Queries\GetUsers\" />
     <Folder Include="Domain\Entities\" />
   </ItemGroup>
 
