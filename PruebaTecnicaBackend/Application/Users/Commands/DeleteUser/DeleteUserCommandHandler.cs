@@ -1,6 +1,6 @@
 ﻿namespace PruebaTecnicaBackend.Application.Users.Commands.DeleteUser
 {
-    public interface DeleteUserCommandHandler
+    public interface DeleteAddressesCommandHandler
 	{
     }
 }

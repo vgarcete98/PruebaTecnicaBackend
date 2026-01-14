@@ -1,6 +1,6 @@
 ﻿namespace PruebaTecnicaBackend.Application.Users.Queries.GetUsers
 {
-    public class GetUsersQueryHandler
+    public class GetAddressesUserQueryHandler
     {
     }
 }

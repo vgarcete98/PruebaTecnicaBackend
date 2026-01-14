@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Application\Addresses\Commands\" />
-    <Folder Include="Application\Addresses\Queries\" />
-    <Folder Include="Application\Currencies\Commands\" />
-    <Folder Include="Application\CurrencyConversion\" />
     <Folder Include="Domain\Entities\" />
   </ItemGroup>
 
