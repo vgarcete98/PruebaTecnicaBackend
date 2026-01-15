@@ -15,7 +15,15 @@ namespace PruebaTecnicaBackend.Application.Users.Queries.GetUsers
 
 		public async Task<List<User>> Handle(GetUsersQuery query)
 		{
-			return await _db.Users.ToListAsync();
+
+			if (query.isActive == null)
+			{
+				return await _db.Users.ToListAsync();
+
+			}else
+			{
+                return await _db.Users.Where( x=> x.IsActive == ((query.isActive.Value)? 1 : 0) ).ToListAsync();
+            }
 		}
 	}
 }

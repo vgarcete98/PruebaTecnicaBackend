@@ -17,7 +17,7 @@ namespace PruebaTecnicaBackend.Controllers
 		}
 
 		[HttpDelete("{id}")]
-		public async Task<IActionResult> EliminarDireccion(int id, [FromBody] DeleteAddressesCommand command)
+		public async Task<IActionResult> EliminarDireccion(int id)
 		{
 			var handler = _serviceProvider.GetRequiredService<DeleteAddressesCommandHandler>();
 			await handler.Handle(new DeleteAddressesCommand { Id = id });

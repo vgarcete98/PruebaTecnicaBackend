@@ -23,13 +23,13 @@ namespace PruebaTecnicaBackend.Controllers
 		}
 
 		[HttpGet]
-		public async Task<IActionResult> ObtenerUsuarios()
+		public async Task<IActionResult> ObtenerUsuarios([FromBody] bool? isActive)
 		{
 
 			try
 			{
 				var handler = _serviceProvider.GetRequiredService<GetUsersQueryHandler>();
-				var users = await handler.Handle(new GetUsersQuery());
+				var users = await handler.Handle(new GetUsersQuery(isActive));
 				return Ok(users);
 			}
 			catch (Exception ex)
