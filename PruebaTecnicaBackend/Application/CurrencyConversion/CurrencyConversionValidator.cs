@@ -18,7 +18,7 @@ namespace PruebaTecnicaBackend.Application.CurrencyConversion
             //fromCurrencyCode y toCurrencyCode deben existir en Currencies. 
 
             RuleFor(x => x.amount)
-                .GreaterThan(0).WithMessage("La street es obligatorio");
+                .GreaterThan(0).WithMessage("El monto tiene que ser mayor a 0");
 
             RuleFor(x => x.fromCurrencyCode)
                 .MustAsync(fromCurrencyCodeExists)

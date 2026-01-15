@@ -20,18 +20,15 @@ https://localhost:7106
 http://localhost:5106
 
 Tambien estare integrando unb archivo postman con todas las configuraciones hechas para que el mismo se pueda importar y probar directamente
-
+PruebaTecnicaBackend.postman_collection --> este es el nombre del archivo, tambien lo estare dejando por correo
 
 # Cómo crear/aplicar migraciones SQLite (o cómo se crea la DB). 
 
-1. Crear la migracion --> dotnet ef migrations add InitialCreate
-2. Aplicar migraciones --> dotnet ef database update
-Yo estare dejando el archivo .db en la raiz del proyecto la misma tiene que estar ahi
-3. En el archivo appsettings.json debe de estar el nombre del archivo el cual va tomar el dbContext
-
+1. Simplemente correr el proyecto, el mismo crea la base si es que no existe y en el mismo no debe existir ningun archivo con extension .db ni relacionados, o sea db-shm y db-wal
+2. En el appsettings .json tener configurado el default connection que seria el nombre del archivo .db generado
 {
     "ConnectionStrings": {
-    "DefaultConnection": "Data Source=MyDatabase.db" --> Aqqui tiene que estar la localizacion del archivo de base de datos, en este caso esta en la raiz
+    "DefaultConnection": "Data Source=PruebaTecnicaBackend.db" --> Aqqui tiene que estar la localizacion del archivo de base de datos, en este caso esta en la raiz
     }
 }
 

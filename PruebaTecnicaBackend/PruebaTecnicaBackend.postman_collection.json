@@ -1,0 +1,396 @@
+{
+	"info": {
+		"_postman_id": "c25a7a3a-d646-44ac-a486-de91f660a10b",
+		"name": "PruebaTecnicaBackend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20720034",
+		"_collection_link": "https://red-crater-262182.postman.co/workspace/My-Workspace~d4e9431c-0cb4-4726-8ed3-3ec83ba7bddf/collection/20720034-c25a7a3a-d646-44ac-a486-de91f660a10b?action=share&source=collection_link&creator=20720034"
+	},
+	"item": [
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Obtener Usuarios",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-KEY",
+								"value": "MI_API_KEY_SECRETA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7106/users?isActive=true",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7106",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "isActive",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Usuario",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-KEY",
+								"value": "MI_API_KEY_SECRETA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7106/users/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7106",
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Usuario",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-KEY",
+								"value": "MI_API_KEY_SECRETA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Email\": \"vgarcete@tlp.com.py\",\r\n  \"Name\": \"dfokv1QXcGnT\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7106/users",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7106",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Usuario",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-API-KEY",
+								"value": "MI_API_KEY_SECRETA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Email\": \"vgarcete@tlp.com.py\",\r\n  \"Name\": \"Victor\",\r\n  \"isActive\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7106/users/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7106",
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar Usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-API-KEY",
+								"value": "MI_API_KEY_SECRETA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7106/users/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7106",
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Adresses de Usuario",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-KEY",
+								"value": "MI_API_KEY_SECRETA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7106/users/1/addresses",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7106",
+							"path": [
+								"users",
+								"1",
+								"addresses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Adress Para Usuario",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-KEY",
+								"value": "MI_API_KEY_SECRETA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"street\": \"Calle Falsa 123\", \r\n    \"city\": \"Asunción\", \r\n    \"country\": \"Paraguay\", \r\n    \"zipCode\": \"9999\"\r\n} \r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7106/users/1/addresses",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7106",
+							"path": [
+								"users",
+								"1",
+								"addresses"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Adresses",
+			"item": [
+				{
+					"name": "Actualizar Adresses",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-API-KEY",
+								"value": "MI_API_KEY_SECRETA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"street\": \"Calle Falsa 123\", \r\n    \"city\": \"Asunción\", \r\n    \"country\": \"Paraguay\", \r\n    \"zipCode\": \"9999\"\r\n} \r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7106/addresses/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7106",
+							"path": [
+								"addresses",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar Adresses",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-API-KEY",
+								"value": "MI_API_KEY_SECRETA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7106/addresses/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7106",
+							"path": [
+								"addresses",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Currencies",
+			"item": [
+				{
+					"name": "Listar Monedas",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-KEY",
+								"value": "MI_API_KEY_SECRETA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://localhost:7106/currencies",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7106",
+							"path": [
+								"currencies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Moneda",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-KEY",
+								"value": "MI_API_KEY_SECRETA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"code\": \"PYG\",\r\n  \"name\": \"Guaranies\",\r\n    \"rateToBase\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7106/currencies",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7106",
+							"path": [
+								"currencies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Convertir Monedas",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-KEY",
+								"value": "MI_API_KEY_SECRETA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"fromCurrencyCode\": \"USD\", \r\n    \"toCurrencyCode\": \"PYG\", \r\n    \"amount\": 100 \r\n\r\n} \r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7106/currency/convert",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7106",
+							"path": [
+								"currency",
+								"convert"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
