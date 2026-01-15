@@ -1,4 +1,5 @@
 using PruebaTecnicaBackend;
+using PruebaTecnicaBackend.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,8 +11,13 @@ startup.ConfigureServices(builder.Services);
 
 var app = builder.Build();
 
+app.UseRouting();
+app.UseMiddleware<ApiKeyMiddleware>();
 
 app.MapControllers();
+
+
+
 
 app.Run();
 

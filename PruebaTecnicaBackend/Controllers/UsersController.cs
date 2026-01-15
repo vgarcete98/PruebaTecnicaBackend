@@ -7,13 +7,13 @@ using PruebaTecnicaBackend.Application.Users.Commands.DeleteUser;
 using PruebaTecnicaBackend.Application.Users.Commands.UpdateUser;
 using PruebaTecnicaBackend.Application.Users.Queries.GetUserById;
 using PruebaTecnicaBackend.Application.Users.Queries.GetUsers;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 
 namespace PruebaTecnicaBackend.Controllers
 {
-	[Route("users")]
-	public class UsersController : Controller
+    [ApiController]
+    [Route("users")]
+	public class UsersController : ControllerBase
     {
 		private readonly IServiceProvider _serviceProvider;
 		public UsersController(IServiceProvider serviceProvider) {
@@ -89,10 +89,9 @@ namespace PruebaTecnicaBackend.Controllers
 
 			try
 			{
-				//var handler = _serviceProvider.GetRequiredService<GetAddressesUserQuery>();
-				//var userAddresses = await handler.Handle(new GetAddressesUserQuery(id));
-				//return userAddresses == null ? NotFound() : Ok(userAddresses);
-				return Ok();
+				var handler = _serviceProvider.GetRequiredService<GetAddressesUserQueryHandler>();
+				var userAddresses = await handler.Handle(new GetAddressesUserQuery(id));
+				return userAddresses == null ? NotFound() : Ok(userAddresses);
 			}
 			catch (Exception ex)
 			{
@@ -110,9 +109,12 @@ namespace PruebaTecnicaBackend.Controllers
 
 			try
 			{
+
+				command.SetearUsuario(id);
+
 				var handler = _serviceProvider.GetRequiredService<CreateUserAddressesCommandHandler>();
 				var direcciones = await handler.Handle(command);
-				return Ok(direcciones);
+				return (direcciones == null)? NotFound(): Ok();
 			}
 			catch (Exception ex)
 			{

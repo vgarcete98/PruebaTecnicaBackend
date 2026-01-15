@@ -97,34 +97,5 @@ namespace PruebaTecnicaBackend
         }
 
 
-        public void Configure (  IApplicationBuilder app, IWebHostEnvironment env)
-        {
-
-            try
-            {
-
-                // YA ESTA AQUI LA VALIDACION PARA QUE SIEMPRE ACEPTE UN TOKEN API
-
-                app.UseMiddleware<ApiKeyMiddleware>();
-
-				app.UseRouting();
-
-                app.UseCors("");
-
-                app.UseAuthentication();
-
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine( $"Ha ocurrido un error al realizar la configuracion de la aplicacion {ex.Message}" );
-            }
-
-
-        }
-
-
-
-
-
     }
 }

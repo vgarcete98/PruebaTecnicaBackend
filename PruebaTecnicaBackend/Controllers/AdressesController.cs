@@ -4,8 +4,9 @@ using PruebaTecnicaBackend.Application.Addresses.Commands.UpdateAddresses;
 
 namespace PruebaTecnicaBackend.Controllers
 {
-	[Route("addresses")]
-	public class AdressesController : Controller
+    [ApiController]
+    [Route("addresses")]
+	public class AdressesController : ControllerBase
     {
 		private readonly IServiceProvider _serviceProvider;
 		public AdressesController(IServiceProvider serviceProvider)

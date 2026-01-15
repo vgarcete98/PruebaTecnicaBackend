@@ -2,6 +2,10 @@
 {
     public class CreateUserAddressesCommand
     {
+		public void SetearUsuario(int id ) { 
+			Id = id;
+		
+		}
 		public int Id { get; set; }
 
 		public int UserId { get; set; }

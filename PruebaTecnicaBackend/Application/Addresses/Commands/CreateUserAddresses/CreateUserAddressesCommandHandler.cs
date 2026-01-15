@@ -1,4 +1,5 @@
-﻿using PruebaTecnicaBackend.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using PruebaTecnicaBackend.Data;
 using PruebaTecnicaBackend.Domain.Entities;
 
 namespace PruebaTecnicaBackend.Application.Addresses.Commands.CreateUserAddresses
@@ -12,21 +13,36 @@ namespace PruebaTecnicaBackend.Application.Addresses.Commands.CreateUserAddresse
 			_context = context;
 		}
 
-		public async Task<int> Handle(CreateUserAddressesCommand command)
+		public async Task<User> Handle(CreateUserAddressesCommand command)
 		{
-			var userAddress = new Address
+
+            var user = await _context.Users.FindAsync(command.Id);
+            int maxId = await _context.Addresses.MaxAsync(u => (int?)u.Id) ?? 0;
+
+            if (user != null)
 			{
-				Street = command.Street,
-				City = command.City,
-				Country = command.Country,
-				ZipCode = command.ZipCode,
-				UserId = command.UserId
-			};
+				var userAddress = new Address
+				{
+					Id = maxId + 1,
+                    Street = command.Street,
+					City = command.City,
+					Country = command.Country,
+					ZipCode = command.ZipCode,
+					UserId = command.UserId,
+					User = user
+				};
 
-			_context.Addresses.Add(userAddress);
-			await _context.SaveChangesAsync();
+				_context.Addresses.Add(userAddress);
+				await _context.SaveChangesAsync();
 
-			return userAddress.Id;
+				return user;
+
+			}else
+			{
+				return null;
+
+            }
+
 		}
 	}
 }

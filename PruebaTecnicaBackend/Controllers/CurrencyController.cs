@@ -7,7 +7,9 @@ using PruebaTecnicaBackend.Application.Users.Queries.GetUsers;
 
 namespace PruebaTecnicaBackend.Controllers
 {
-	public class CurrencyController : Controller
+    [ApiController]
+
+    public class CurrencyController : ControllerBase
     {
 
 		private readonly IServiceProvider _serviceProvider;

@@ -19,7 +19,7 @@
 				return;
 			}
 
-			var apiKey = config.GetValue<string>("ApiKey");
+			var apiKey = config.GetValue<string>("X-API-KEY");
 
 			if (!apiKey.Equals(extractedApiKey))
 			{
